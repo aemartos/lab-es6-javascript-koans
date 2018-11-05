@@ -14,7 +14,7 @@ describe('`let` restricts the scope of the variable to the current block - ', ()
     });
 
     it('`let` restricts scope to inside the block', () => {
-      let letX = false;
+      var letX = false;
       if (true) {
         let letX = true;
       }
@@ -116,7 +116,7 @@ describe('`string.includes()` finds string within another string. ', () => {
       expect('abc'.includes('a', position)).toBe(false);
     });
     it('even the position gets coerced', function() {
-      const findAtPosition = (pos) => 'xyz'.includes('z');
+      const findAtPosition = (pos) => 'xyz'.includes('z', pos);
       expect(findAtPosition('2')).toBe(true);
     });
     describe('invalid positions get converted to 0', function() {
